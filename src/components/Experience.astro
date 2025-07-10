@@ -1,0 +1,60 @@
+---
+const experiences = [
+  {
+    company: "Space307",
+    position: "Frontend Developer",
+    period: "2022 - Present",
+    description: "Led a team of 2 developers to rebuild the company's main product using React and TypeScript. Implemented modern design systems and improved performance by 40%. Mentored junior developers and established best practices for code quality.",
+    current: true
+  },
+  {
+    company: "Rosatom",
+    position: "Junior Frontend Developer",
+    period: "2021 - 2022",
+    description: "Developed and maintained multiple web applications using React, Node.js, and PostgreSQL. Built responsive UIs and RESTful APIs. Collaborated closely with designers and product managers to deliver user-centric solutions.",
+    current: false
+  },
+];
+---
+
+<section id="experience" class="py-20 px-6 bg-white">
+   <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-light text-gray-800 mb-12 text-center">
+      Work Experience <span class="text-2xl">💼</span>
+    </h2>
+    
+    <div class="relative">
+      <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-primary"></div>
+      
+      <div class="space-y-12">
+        {experiences.map((exp, index) => (
+          <div class="relative flex items-start">
+            <!-- Timeline dot -->
+            <div class={`relative z-10 flex items-center justify-center w-16 h-16 rounded-full ${exp.current ? 'bg-primary' : 'bg-gray-300'} flex-shrink-0`}>
+              <div class="w-6 h-6 bg-white rounded-full"></div>
+            </div>
+            
+            <div class="ml-8 bg-gray-50 rounded-xl p-6 flex-1 shadow-sm">
+              <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-3">
+                <h3 class="text-xl font-semibold text-gray-800">{exp.company}</h3>
+                <span class={`text-sm px-3 py-1 rounded-full ${exp.current ? 'bg-primary text-white' : 'bg-gray-200 text-gray-600'}`}>
+                  {exp.period}
+                </span>
+              </div>
+              
+              <h4 class="text-lg font-medium text-primary mb-3">{exp.position}</h4>
+              
+              <p class="text-gray-600 leading-relaxed">{exp.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Timeline start indicator -->
+      <div class="absolute left-0 bottom-0 transform translate-y-4 flex flex-col items-center">
+        <div class="w-4 h-4 bg-coral rounded-full"></div>
+        <div class="text-xs text-gray-500 mt-2">Career Start</div>
+      </div>
+    </div>
+  </div>
+</section>
