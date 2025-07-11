@@ -2,7 +2,7 @@
 // src/components/About.astro
 const hobbies = [
   { icon: "🎸", name: "Guitar" },
-  { icon: "💻", name: "Programming" },
+  { icon: "💻", name: "Coding" },
   { icon: "🎮", name: "Gaming" },
   { icon: "🎨", name: "Design" },
   { icon: "🏃‍♂️", name: "Running" },
@@ -11,7 +11,7 @@ const hobbies = [
 ---
 
 <!-- About Section -->
-<section id="about" class="py-20 px-6 bg-gradient-to-br from-white to-primary-light/20 relative overflow-hidden">
+<section id="about" class="py-20 px-6 bg-gradient-to-br from-primary-light/30 to-white relative overflow-hidden">
   <!-- Декоративные элементы -->
   <div class="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
   <div class="absolute bottom-20 right-10 w-32 h-32 bg-secondary/10 rounded-full blur-2xl"></div>
@@ -19,9 +19,8 @@ const hobbies = [
   <div class="max-w-6xl mx-auto relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       <div>
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-8 relative">
+       <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-8 relative">
           About Me
-          <span class="text-primary text-3xl ml-2">🌟</span>
           <!-- Декоративная линия -->
           <div class="absolute -bottom-3 left-0 w-16 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
         </h2>

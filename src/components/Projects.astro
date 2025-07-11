@@ -48,8 +48,8 @@ const projects = [
     
     <!-- Projects Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {projects.map((project, index) => (
-        <div class={`group relative overflow-hidden rounded-3xl ${project.bgColor} backdrop-blur-sm p-8 h-80 flex flex-col justify-between hover:scale-[1.02] transition-all duration-500 cursor-pointer border border-orange-200/50 hover:border-orange-200/70 hover:shadow-xl hover:shadow-primary/10`}>          
+      {projects.map(project => (
+        <div class={`group relative overflow-hidden rounded-3xl ${project.bgColor} backdrop-blur-sm p-8 h-80 flex flex-col justify-between hover:scale-[1.02] transition-all duration-500 cursor-pointer border border-orange-200/50 hover:border-orange-200/70 shadow-sm hover:shadow-lg hover:shadow-primary/10`}>          
           <!-- Content -->
           <div class="relative z-10 flex flex-col h-full">
             <!-- Mockup -->
