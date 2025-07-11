@@ -55,7 +55,7 @@ export default function Header() {
       />
 
       {/* Header Navigation */}
-      <header className="hidden md:block sticky top-6 z-50 px-6">
+      <header className="hidden md:block fixed top-6 right-0 z-50 px-6">
         <div className="flex justify-end items-center">
           {/* Navigation Menu */}
           <nav

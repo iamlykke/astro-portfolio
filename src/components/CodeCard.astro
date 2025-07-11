@@ -5,6 +5,8 @@ const codeSnippet = [
   { line: `  name: 'Sergei',`, type: "code" },
   { line: "  skills: ['React', 'JS', 'CSS'],", type: "code" },
   { line: "  passion: 'coding'", type: "code" },
+  { line: "  location: 'Serbia'", type: "code" },
+  { line: "  email: 'usachev97@gmail.com'", type: "code" },
   { line: "};", type: "code" },
   { line: "// Ready for new projects!", type: "comment" },
 ];
@@ -50,7 +52,7 @@ const codeSnippet = [
                   {part}
                 </span>
               );
-            } else if (part.includes('name:') || part.includes('skills:') || part.includes('passion:')) {
+            } else if (part.includes('name:') || part.includes('skills:') || part.includes('passion:') || part.includes('location:') || part.includes('email:')) {
               return (
                 <span>
                   &nbsp;&nbsp;{part}
