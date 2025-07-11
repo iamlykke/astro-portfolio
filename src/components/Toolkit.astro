@@ -1,76 +1,82 @@
 ---
+// src/components/Toolkit.astro
 const skills = [
   {
     icon: "⚛️",
     title: "React & Next.js",
-    description: "Создание современных SPA и SSR приложений с использованием React экосистемы. Опыт работы с Redux, Context API и современными хуками."
+    description: "Building modern SPA and SSR applications using React ecosystem. Experience with Redux, Context API, and modern hooks."
   },
   {
     icon: "💾",
     title: "JavaScript & TypeScript",
-    description: "Глубокое понимание JavaScript ES6+, асинхронного программирования и типизации с TypeScript для более надежного кода."
+    description: "Deep understanding of JavaScript ES6+, asynchronous programming, and TypeScript for more reliable code."
   },
   {
     icon: "🎨",
     title: "CSS & Styling",
-    description: "Адаптивная верстка, CSS Grid, Flexbox, анимации и работа с препроцессорами. Опыт с Tailwind CSS и styled-components."
+    description: "Responsive layout, CSS Grid, Flexbox, animations, and working with preprocessors. Experience with Tailwind CSS and styled-components."
   },
   {
     icon: "🔧",
-    title: "Инструменты разработки",
-    description: "Настройка сборки с Webpack, Vite, работа с Git, CI/CD, тестирование с Jest и опыт работы с различными API."
+    title: "Development Tools",
+    description: "Build setup with Webpack, Vite, working with Git, CI/CD, testing with Jest, and experience with various APIs."
   },
   {
     icon: "🚀",
     title: "Astro & Modern Tools",
-    description: "Создание быстрых статических сайтов с помощью Astro, оптимизация производительности и современные инструменты разработки."
+    description: "Creating fast static sites with Astro, performance optimization, and modern development tools."
   },
   {
     icon: "📱",
     title: "Responsive Design",
-    description: "Создание адаптивных интерфейсов для всех устройств, Progressive Web Apps и оптимизация пользовательского опыта."
+    description: "Creating adaptive interfaces for all devices, Progressive Web Apps, and user experience optimization."
   }
 ];
 ---
 
-<section class="py-20 bg-gradient-to-b from-white to-gray-50" id="skills">
-  <div class="max-w-6xl mx-auto px-5">
-    {/* Заголовок секции */}
+<!-- Skills Section -->
+<section class="py-20 bg-gradient-to-br from-orange-50/50 via-amber-50/40 to-orange-100/60 relative overflow-hidden" id="skills">
+
+  <!-- Дополнительные элементы -->
+  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-primary/3 to-transparent"></div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+    <!-- Section Header -->
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 relative inline-block">
-        Мои навыки
-        {/* Декоративная линия под заголовком */}
-        <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full"></div>
+        My Skills
+        <!-- Decorative line under header -->
+        <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
       </h2>
     </div>
 
-    {/* Сетка навыков */}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Skills Grid: 3 колонки на десктопе, 1 колонка на мобильном -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 xl:px-0">
       {skills.map((skill) => (
         <div 
-          class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-orange-200 transform hover:-translate-y-2 relative overflow-hidden"
+          class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/50 hover:border-primary-light/50 transform hover:-translate-y-2 relative overflow-hidden h-64"
         >
-          {/* Градиентный фон при ховере */}
-          <div class="absolute inset-0 bg-gradient-to-br from-orange-50 to-amber-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <!-- Gradient background on hover -->
+          <div class="absolute inset-0 bg-gradient-to-br from-primary-light/20 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           
-          {/* Вращающийся декоративный элемент */}
-          <div class="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-orange-500/10 to-amber-500/10 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-spin transition-all duration-700"></div>
+          <!-- Rotating decorative element -->
+          <div class="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-primary/8 to-secondary/8 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-spin transition-all duration-700"></div>
           
-          <div class="relative z-10">
-            {/* Квадратная иконка с эффектами как во втором варианте */}
-            <div class="relative mb-8">
-              <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center text-2xl shadow-lg group-hover:shadow-orange-500/25 group-hover:shadow-2xl transition-all duration-500 group-hover:rotate-3 group-hover:scale-110">
+          <div class="relative z-10 flex flex-col h-full">
+            <!-- Icon -->
+            <div class="mb-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center text-xl shadow-lg group-hover:shadow-primary/25 group-hover:shadow-xl transition-all duration-500 group-hover:rotate-3 group-hover:scale-110">
                 {skill.icon}
               </div>
             </div>
 
-            {/* Заголовок */}
-            <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors duration-300">
+            <!-- Title -->
+            <h3 class="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">
               {skill.title}
             </h3>
 
-            {/* Описание */}
-            <p class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+            <!-- Description -->
+            <p class="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 flex-grow">
               {skill.description}
             </p>
           </div>
