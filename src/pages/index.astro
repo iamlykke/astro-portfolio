@@ -8,9 +8,11 @@ import Toolkit from '../components/Toolkit.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 import Experience from '../components/Experience.astro';
+import Header from '../components/Header.tsx';
 ---
 
 <BaseLayout>
+  <Header client:load />
   <Hero />
   <Experience />
   <Toolkit />

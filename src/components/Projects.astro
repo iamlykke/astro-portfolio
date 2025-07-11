@@ -2,32 +2,36 @@
 // src/components/Projects.astro
 const projects = [
   {
-    title: "E-commerce Platform",
-    description: "Full-stack shopping solution with modern UI",
-    bgColor: "bg-purple-light/40",
+    title: "Commercial Landing Page",
+    description: "Landing solution with modern UI and animations",
+    bgColor: "bg-purple-light/50",
     mockup: "laptop",
-    tech: ["React", "Node.js", "PostgreSQL"]
+    tech: ["React", "TypeScript", "VIte", "CSS Modules", "Motion"],
+    href: "https://space307.com/"
   },
   {
-    title: "Task Management App",
-    description: "Collaborative project management tool", 
-    bgColor: "bg-pink-light/40",
-    mockup: "phone",
-    tech: ["React Native", "Firebase", "TypeScript"]
+    title: "Personal Blog",
+    description: "My blog/sandbox where I make experiments and share my passions", 
+    bgColor: "bg-pink-light/50",
+    mockup: "laptop",
+    tech: ["React", "TypeScript", "Next.js", "Tailwind"],
+    href: "https://my-blog-blond-omega.vercel.app/"
   },
   {
-    title: "Analytics Dashboard",
-    description: "Real-time data visualization platform",
-    bgColor: "bg-green-light/40", 
+    title: "Landing Page",
+    description: "Adaptive landing page with jQuery elements and slider",
+    bgColor: "bg-green-light/50", 
     mockup: "tablet",
-    tech: ["Next.js", "D3.js", "MongoDB"]
+    tech: ["HTML", "CSS", "jQuery"],
+    href: "https://iamlykke.github.io/Active_box/"
   },
   {
     title: "Portfolio Website",
-    description: "Modern developer portfolio with Astro",
-    bgColor: "bg-blue-light/40",
+    description: "Modern developer portfolio with Astro (You are here!)",
+    bgColor: "bg-blue-light/50",
     mockup: "laptop",
-    tech: ["Astro", "Tailwind", "TypeScript"]
+    tech: ["Astro", "Tailwind", "TypeScript"],
+    href: ""
   }
 ];
 ---
@@ -49,7 +53,7 @@ const projects = [
     <!-- Projects Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {projects.map(project => (
-        <div class={`group relative overflow-hidden rounded-3xl ${project.bgColor} backdrop-blur-sm p-8 h-80 flex flex-col justify-between hover:scale-[1.02] transition-all duration-500 cursor-pointer border border-orange-200/50 hover:border-orange-200/70 shadow-sm hover:shadow-lg hover:shadow-primary/10`}>          
+        <a href={project.href} target="_blank" class={`group relative overflow-hidden rounded-3xl ${project.bgColor} backdrop-blur-sm p-8 h-80 flex flex-col justify-between hover:scale-[1.02] transition-all duration-500 cursor-pointer border border-orange-200/50 hover:border-orange-200/70 shadow-sm hover:shadow-lg hover:shadow-primary/10`}>          
           <!-- Content -->
           <div class="relative z-10 flex flex-col h-full">
             <!-- Mockup -->
@@ -74,7 +78,7 @@ const projects = [
                 <div class="relative">
                   <div class="w-28 h-36 bg-white rounded-2xl shadow-xl border-4 border-gray-200 flex items-center justify-center group-hover:shadow-2xl transition-shadow duration-500">
                     <div class="w-20 h-28 bg-gradient-to-tr from-primary via-secondary to-primary rounded-lg opacity-80 flex items-center justify-center">
-                      <div class="text-white text-lg">📊</div>
+                      
                     </div>
                   </div>
                   <div class="absolute inset-0 bg-secondary/20 rounded-2xl blur opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
@@ -99,7 +103,7 @@ const projects = [
               </div>
             </div>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   </div>

@@ -18,7 +18,7 @@ const experiences = [
     company: "Baltic State Technical University",
     position: "Specialist Degree in Radioelectronic Systems and Complexes",
     period: "2015 - 2021",
-    description: "",
+    description: "Studied radioelectronics at the Faculty of Information Technologies, where I developed fundamental knowledge in electronic systems and discovered my passion for programming. This technical foundation sparked my transition into software development",
     current: false
   },
 ];
@@ -28,7 +28,7 @@ const experiences = [
    <div class="max-w-4xl mx-auto">
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 relative inline-block">
-        Work Experience
+        Experience
         <!-- Decorative line under header -->
         <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
       </h2>
@@ -46,7 +46,7 @@ const experiences = [
             </div>
             
             <div class="ml-0 sm:ml-8 bg-gray-50 rounded-xl p-6 flex-1 shadow-sm border border-orange-200/50">
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-2">
+              <div class="flex flex-row items-center justify-between flex-wrap mb-2 gap-2">
                 <h3 class="text-xl font-semibold text-gray-800">{exp.company}</h3>
                 <span class={`text-sm px-3 py-1 rounded-full w-fit ${exp.current ? 'bg-primary text-white' : 'bg-gray-200 text-gray-600'}`}>
                   {exp.period}
