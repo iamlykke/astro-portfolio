@@ -1,0 +1,114 @@
+---
+
+const codeSnippet = [
+  { line: "const developer = {", type: "code" },
+  { line: `  name: 'Sergei',`, type: "code" },
+  { line: "  skills: ['React', 'JS', 'CSS'],", type: "code" },
+  { line: "  passion: 'coding'", type: "code" },
+  { line: "};", type: "code" },
+  { line: "// Ready for new projects!", type: "comment" },
+];
+---
+
+<div class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl shadow-2xl p-6 wp-[320px] lg:w-[512px] mx-auto border border-orange-500/20 relative overflow-hidden animate-float-smooth">
+  {/* Светящийся эффект */}
+  <div class="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-amber-500/5 pointer-events-none"></div>
+  
+  {/* Заголовок */}
+  <div class="flex items-center mb-4 pb-3 border-b border-gray-700/50 relative z-10">
+    <div class="flex space-x-2">
+      <div class="w-3 h-3 bg-red-500 rounded-full shadow-lg shadow-red-500/30"></div>
+      <div class="w-3 h-3 bg-yellow-500 rounded-full shadow-lg shadow-yellow-500/30"></div>
+      <div class="w-3 h-3 bg-green-500 rounded-full shadow-lg shadow-green-500/30"></div>
+    </div>
+    <div class="flex-1 text-center">
+      <span class="text-gray-400 text-xs font-medium">✨ developer.js</span>
+    </div>
+  </div>
+
+  {/* Код с дополнительными эффектами */}
+  <div class="font-mono text-sm leading-relaxed relative z-10">
+    {codeSnippet.map((item) => (
+      <div 
+        class={`mb-2 hover:bg-white/5 px-2 py-1 rounded transition-all duration-200 ${
+          item.type === 'code' ? 'text-gray-300' : 
+          item.type === 'comment' ? 'text-gray-500 italic' : 
+          'text-gray-300'
+        }`}
+      >
+        {item.line.split("'").map((part, partIndex) => {
+          if (partIndex % 2 === 0) {
+            if (part.includes('const')) {
+              return (
+                <span class="text-red-400 font-semibold drop-shadow-sm">
+                  {part}
+                </span>
+              );
+            } else if (part.includes('//')) {
+              return (
+                <span class="text-gray-500 italic">
+                  {part}
+                </span>
+              );
+            } else if (part.includes('name:') || part.includes('skills:') || part.includes('passion:')) {
+              return (
+                <span>
+                  &nbsp;&nbsp;{part}
+                </span>
+              );
+            } else {
+              return part;
+            }
+          } else {
+            return (
+              <span class="text-teal-300 drop-shadow-sm">
+                '{part}'
+              </span>
+            );
+          }
+        })}
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes float-smooth {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes float-gentle {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-float-smooth {
+    animation: float-smooth 4s ease-in-out infinite;
+  }
+
+  .animate-float-gentle {
+    animation: float-gentle 5s ease-in-out infinite;
+  }
+</style>
