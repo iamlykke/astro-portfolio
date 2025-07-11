@@ -8,7 +8,7 @@ const navItems = [
   { name: "Contact", href: "#contact", icon: "📧" },
 ];
 
-export default function HeaderReact() {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Handle click outside to close menu
@@ -55,7 +55,7 @@ export default function HeaderReact() {
       />
 
       {/* Header Navigation */}
-      <header className="hidden sm:block sticky top-6 z-50 px-6">
+      <header className="hidden md:block sticky top-6 z-50 px-6">
         <div className="flex justify-end items-center">
           {/* Navigation Menu */}
           <nav
@@ -78,13 +78,7 @@ export default function HeaderReact() {
                       "group relative flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-primary/10 text-gray-700 hover:text-primary"
                     }
                   >
-                    {/* Icon (visible on mobile) */}
-                    <span className="text-lg md:hidden">{item.icon}</span>
-
-                    {/* Text (visible on desktop) */}
                     <span className="hidden md:block">{item.name}</span>
-
-                    {/* Hover background */}
                     <div className="absolute inset-0 rounded-full bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </a>
                 </li>

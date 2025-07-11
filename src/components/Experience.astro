@@ -5,21 +5,24 @@ const experiences = [
     position: "Frontend Developer",
     period: "2022 - Present",
     description: "Developed 15+ internal platforms and services optimizing HR processes using React, TypeScript, and Zustand. Enhanced system performance by 40% while mentoring developers and establishing modern coding standards.",
-    current: true
+    current: true,
+    href: 'https://space307.com/'
   },
   {
     company: "Rosatom",
     position: "Junior Frontend Developer",
     period: "2021 - 2022",
     description: "Worked on the development of the 'Employee’s Personal Cabinet' — a large-scale internal HR system used daily by over 50,000 employees for managing documents, vacations, and personal data.",
-    current: false
+    current: false,
+    href: 'https://www.rosatom.ru/en/index.html'
   },
   {
     company: "Baltic State Technical University",
     position: "Specialist Degree in Radioelectronic Systems and Complexes",
     period: "2015 - 2021",
     description: "Studied radioelectronics at the Faculty of Information Technologies, where I developed fundamental knowledge in electronic systems and discovered my passion for programming. This technical foundation sparked my transition into software development",
-    current: false
+    current: false,
+    href: 'https://voenmeh.ru/en/'
   },
 ];
 ---
@@ -47,7 +50,14 @@ const experiences = [
             
             <div class="ml-0 sm:ml-8 bg-gray-50 rounded-xl p-6 flex-1 shadow-sm border border-orange-200/50">
               <div class="flex flex-row items-center justify-between flex-wrap mb-2 gap-2">
-                <h3 class="text-xl font-semibold text-gray-800">{exp.company}</h3>
+               <a href={exp.href} target="_blank" class="group">
+                  <h3 class="text-xl font-semibold text-gray-800 group-hover:text-primary transition-all duration-300 transform group-hover:translate-x-1 relative">
+                    {exp.company}
+                    <svg class="inline-block w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                  </h3>
+                </a>
                 <span class={`text-sm px-3 py-1 rounded-full w-fit ${exp.current ? 'bg-primary text-white' : 'bg-gray-200 text-gray-600'}`}>
                   {exp.period}
                 </span>
